@@ -26,6 +26,7 @@ android {
     defaultConfig {
         applicationId = "dev.tymoshenko.companion"
         minSdk = libs.versions.android.minSdk.get().toInt()
+        //noinspection OldTargetApi
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
@@ -51,4 +52,9 @@ android {
     buildFeatures {
         compose = true
     }
+}
+
+dependencies {
+    // Koin
+    implementation(libs.koin.android)
 }
