@@ -7,12 +7,12 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.tymoshenko.companion.ui.theme.onMidnight
+import dev.tymoshenko.companion.ui.theme.midnightFieldBg
+import dev.tymoshenko.companion.ui.theme.onMidnightField
 
 @Composable
 fun AuthTextField(
@@ -27,11 +27,11 @@ fun AuthTextField(
         value = value,
         onValueChange = onValueChange,
         colors = TextFieldDefaults.colors().copy(
-            focusedIndicatorColor = onMidnight,
-            unfocusedIndicatorColor = onMidnight,
-            focusedTextColor = onMidnight,
-            focusedContainerColor = onMidnight,
-            unfocusedContainerColor = onMidnight
+            focusedIndicatorColor = midnightFieldBg,
+            unfocusedIndicatorColor = midnightFieldBg,
+            focusedTextColor = onMidnightField,
+            focusedContainerColor = midnightFieldBg,
+            unfocusedContainerColor = midnightFieldBg
         ),
         shape = RoundedCornerShape(32),
         singleLine = true,
@@ -39,10 +39,10 @@ fun AuthTextField(
             Text(
                 text = placeholderText,
                 fontSize = 12.sp,
-                color = Color.White
+                color = onMidnightField
             )
         },
-        textStyle = TextStyle(fontSize = 14.sp, color = Color.White)
+        textStyle = TextStyle(fontSize = 14.sp, color = onMidnightField),
     )
 }
 

@@ -9,20 +9,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import companion.shared.generated.resources.Res
 import companion.shared.generated.resources.workout
+import dev.tymoshenko.companion.ui.screens.auth.elems.AppNameSection
 import dev.tymoshenko.companion.ui.screens.auth.elems.AuthTextField
+import dev.tymoshenko.companion.ui.screens.auth.elems.CredSection
 import dev.tymoshenko.companion.ui.theme.chocolateBg
 import dev.tymoshenko.companion.ui.theme.midnightBg
 import org.jetbrains.compose.resources.painterResource
@@ -48,26 +43,11 @@ fun Auth() {
                 contentDescription = null
             )
 
-            Column(
+            AppNameSection(
                 modifier = Modifier
                     .align(Alignment.CenterStart)
-                    .padding(start = 32.dp, top = 128.dp)
-            ) {
-                Text(
-                    text = "Companion",
-                    fontSize = 36.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = Color.White
-                )
-
-                Text(
-                    modifier = Modifier.padding(start = 4.dp),
-                    color = Color.White,
-                    text = "improve yourself",
-                    fontSize = 18.sp,
-                    fontStyle = FontStyle.Italic
-                )
-            }
+                    .fillMaxHeight()
+            )
         }
 
         Box(
@@ -78,12 +58,9 @@ fun Auth() {
                 .imePadding(),
             contentAlignment = Alignment.Center
         ) {
-            Column {
-                AuthTextField(
-                    modifier = Modifier.fillMaxWidth(), onValueChange = {}, value = "adsfsdgs",
-                    placeholderText = "G"
-                )
-            }
+            CredSection(
+                modifier = Modifier.fillMaxWidth(0.8F)
+            )
         }
     }
 }
